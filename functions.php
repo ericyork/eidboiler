@@ -1,4 +1,5 @@
 <?php
+include( get_stylesheet_directory() . '/inc/customizer.php' );
 add_action( 'after_setup_theme', 'eidboiler_setup' );
 function eidboiler_setup()
 {
@@ -13,6 +14,19 @@ array( 'main-menu' => __( 'Main Menu', 'eidboiler' ) )
 );
 }
 add_action( 'wp_enqueue_scripts', 'eidboiler_load_scripts' );
+/*-- adds support for custom logo to replace site title and tagline--*/
+function eidboiler_custom_logo_setup() {
+    $defaults = array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'eidboiler_custom_logo_setup' );
+/*-- loads theme scripts--*/
 function eidboiler_load_scripts()
 {
 wp_enqueue_script( 'jquery' );
@@ -71,3 +85,4 @@ return $parts[0];
 }
 add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
+include( get_stylesheet_directory() . '/inc/customizer.php' );
