@@ -7,6 +7,7 @@ function eidboiler_register_theme_customizer( $wp_customize ) {
 		'theme_supports' => '',
 		'title'          => __( 'Hero Unit', 'eidboiler' ),
 		'description'    => __( 'Set hero image, copy, and CTA.', 'eidboiler' ),
+    'active_callback' => 'is_front_page',
 	) );
 	// Add sections.
 	$wp_customize->add_section( 'hero_background' , array(
@@ -35,12 +36,12 @@ function eidboiler_register_theme_customizer( $wp_customize ) {
 		'default'     => 'Click Me',
 	) );
   $wp_customize->add_setting( 'btn_link', array(
-		'default'     => get_bloginfo('url') . '/about',
+		'default'     => '"'. get_bloginfo('url') . '/#content"',
 	) );
 	// Add controls.
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize, 'hero_background_image', array(
-			  'label'      => __( 'Add Hero Background Here, the width should be approx 1400px', 'eidboiler' ),
+			  'label'      => __( 'Hero image should be 1440px wide', 'eidboiler' ),
 			  'section'    => 'hero_background',
 			  'settings'   => 'hero_bg',
 			  )

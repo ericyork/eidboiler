@@ -2,7 +2,7 @@
 <section class="hero">
   <div class="hero-wrap">
     <h1 class="hero-copy"><?php eidboiler_hero_copy(); ?></h1>
-    <a class="btn cta" href="<?php eidboiler_cta_url(); ?>"><?php eidboiler_cta_copy(); ?></a>
+    <a class="btn cta" href=<?php eidboiler_cta_url(); ?>><?php eidboiler_cta_copy(); ?></a>
   </div>
 </section>
 <div id="grid-container">
