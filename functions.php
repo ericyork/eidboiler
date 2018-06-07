@@ -1,5 +1,5 @@
 <?php
-include( get_stylesheet_directory() . '/inc/customizer.php' );
+
 add_action( 'after_setup_theme', 'eidboiler_setup' );
 function eidboiler_setup()
 {
